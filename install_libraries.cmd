@@ -1,0 +1,7 @@
+arduino-cli lib install "Dusk2Dawn"
+arduino-cli lib install "ArduinoJson"
+arduino-cli lib install "ArduinoHttpServer"
+arduino-cli lib install "FastLED"
+arduino-cli lib install "RTCZero"
+arduino-cli lib install "RTClib"
+arduino-cli lib install "WiFi101"
