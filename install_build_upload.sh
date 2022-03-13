@@ -18,7 +18,6 @@ arduino-cli lib install "ArduinoHttpServer"
 arduino-cli lib install "WiFi101"
 arduino-cli lib install "FastLED"
 arduino-cli lib install "FlashStorage"
-#arduino-cli lib install "LiquidCrystal"
 
 echo
 echo "Install board"
