@@ -77,9 +77,9 @@ class WebServer
       {
         sendResponse(wifiClient, webContent.contentPage_Random);
       }
-      else if (uri == "/favicon.ico")
+      else if (uri == "/scripts/defaultpage.js")
       {
-        sendFavIconResponse(wifiClient);
+        sendResponse(wifiClient, webContent.defaultPage_JS);
       }
       else
       {
@@ -150,19 +150,6 @@ class WebServer
       wifiClient.println("Content-Length: 0");
       wifiClient.println("Connection: close");
       wifiClient.println();
-  
-      // The HTTP response ends with another blank line:
-      wifiClient.println();
-    }
-
-    void sendFavIconResponse(WiFiClient &wifiClient)
-    {
-      wifiClient.println("HTTP/1.1 200 OK");
-      wifiClient.println("Content-type: image/ico");
-      wifiClient.println("Connection: close");
-      wifiClient.println();
-
-      wifiClient.println(webContent.favico);
   
       // The HTTP response ends with another blank line:
       wifiClient.println();

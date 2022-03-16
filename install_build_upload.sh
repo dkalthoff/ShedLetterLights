@@ -27,11 +27,11 @@ echo
 echo "Verify and compile..."
 arduino-cli compile --fqbn arduino:samd:mkr1000
 
-#echo
-#echo "Get available boards"
-#arduino-cli board list
-#echo "*** Connect the microcontroller. Get the port and fqbn values above ***"
+echo
+echo "Get available boards"
+arduino-cli board list
+echo "*** Connect the microcontroller. Get the port and fqbn values above ***"
 
-# echo
-# echo "Upload binaries to the board..."
-# arduino-cli upload --port /dev/ttyACM0 --fqbn arduino:samd:nano_33_iot
+echo
+echo "Upload binaries to the board..."
+arduino-cli upload --port /dev/ttyACM0 --fqbn arduino:samd:nano_33_iot
