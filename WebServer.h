@@ -101,19 +101,31 @@ class WebServer
       body.replace("=%23", "=");
       debugln("Body after removal of encoded #: " + body);
 
+      LightsConfiguration lightsConfiguration;
+
       if (uri == "/api/scenes")
       {
-        LightsConfiguration lightsConfiguration;
         lightsConfiguration.lightsPattern = scenes;
         lightsConfiguration.scenesType = (scenesTypeEnum)body.substring(body.indexOf('=') + 1, body.length()).toInt();
         lightsService.setLightsPattern(lightsConfiguration);
-        sendSuccesfulResponse(wifiClient);
+        
+      }
+      else if (uri == "/api/selectedstatic")
+      {
+        lightsConfiguration.lightsPattern = selectedStatic;
+        char hexColor[6];
+        body.substring(body.indexOf('=') + 1, body.length()).toCharArray(hexColor, body.length());
+        lightsConfiguration.colors[0] = hexColor;
       }
       else
       {
         ArduinoHttpServer::StreamHttpErrorReply httpErrorReply(wifiClient, "text/html");
         httpErrorReply.send("Lights pattern not supported");
+        return;
       }
+
+      lightsService.setLightsPattern(lightsConfiguration);
+      sendSuccesfulResponse(wifiClient);
     }
 
     /*

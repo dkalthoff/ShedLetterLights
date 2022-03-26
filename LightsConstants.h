@@ -108,6 +108,7 @@ typedef struct {
   bool isValid;
   lightsPatternEnum lightsPattern;
   scenesTypeEnum scenesType;
+  const char *colors[];
   const char *info;
 } LightsConfiguration;
 

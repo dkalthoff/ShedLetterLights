@@ -80,9 +80,9 @@ class WebContent
                     
    const String contentPage_Static = "<div class=\"container mb-4\">"
                                       "<h4>Static Color</h4>"
-                                      "<form action=\"/api/static\" method=\"get\" class=\"row\">"
+                                      "<form action=\"/api/selectedStatic\" method=\"get\" class=\"row\">"
                                           "<div class=\"col-2\">"
-                                              "<input type=\"color\" class=\"form-control form-control-color\" id=\"selectedStaticColorInput\" value=\"#563d7c\" title=\"Choose your color\" />"
+                                              "<input type=\"color\" class=\"form-control form-control-color\" id=\"selectedStaticColor\" name=\"selectedStaticColor\" value=\"#563d7c\" title=\"Choose your color\" />"
                                           "</div>"
                                           "<div class=\"col-10\">"
                                               "<button type=\"submit\" class=\"btn btn-primary\">Submit</button>"
