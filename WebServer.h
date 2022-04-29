@@ -107,15 +107,14 @@ class WebServer
       {
         lightsConfiguration.lightsPattern = scenes;
         lightsConfiguration.scenesType = (scenesTypeEnum)body.substring(body.indexOf('=') + 1, body.length()).toInt();
-        lightsService.setLightsPattern(lightsConfiguration);
         
       }
       else if (uri == "/api/selectedstatic")
       {
         lightsConfiguration.lightsPattern = selectedStatic;
-        char hexColor[6];
+        char hexColor[7];
         body.substring(body.indexOf('=') + 1, body.length()).toCharArray(hexColor, body.length());
-        lightsConfiguration.colors[0] = hexColor;
+        strcpy(lightsConfiguration.colors[0], hexColor);
       }
       else
       {

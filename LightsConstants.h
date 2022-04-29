@@ -19,7 +19,7 @@
 #define COLOR_ORDER GRB
 CRGB leds[NUM_LEDS];
 
-#define UPDATES_PER_SECOND 60
+#define UPDATES_PER_SECOND 30
 
 const byte RED = 0;
 const byte GREEN = 1;
@@ -108,7 +108,7 @@ typedef struct {
   bool isValid;
   lightsPatternEnum lightsPattern;
   scenesTypeEnum scenesType;
-  const char *colors[];
+  char colors[][7];
   const char *info;
 } LightsConfiguration;
 

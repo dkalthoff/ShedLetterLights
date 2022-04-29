@@ -103,8 +103,8 @@ class LightsPattern_Scenes
       CRGB white  = CRGB::Gray;
 
       return CRGBPalette16(white,  white,  white, white,
-                           purple, purple, purple, purple,
                            white,  white,  white, white,
+                           purple, purple, purple, purple,
                            purple, purple, purple, purple );
     }
 
@@ -132,13 +132,14 @@ class LightsPattern_Scenes
 
     CRGBPalette16 GetEasterPalette()
     {
-      CRGB red = CRGB::Red;
-      CRGB white  = CRGB::Grey;
+      CRGB color1 = CRGB::Pink;
+      CRGB color2 = CRGB::Yellow;
 
-      return CRGBPalette16(white,  white,  white, white,
-                           red, red, red, red,
-                           white,  white,  white, white,
-                           red, red, red, red );
+
+      return CRGBPalette16(color1, color1, color1, color1,
+                           color1, color1, color1, color1,
+                           color2, color2, color2, color2,
+                           color2, color2, color2, color2);
     }
 
     CRGBPalette16 GetPatrioticPalette()

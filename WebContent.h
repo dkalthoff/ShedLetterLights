@@ -36,7 +36,7 @@ class WebContent
                               "$('.cp').click(function(){g($(this).html(),'cp');});"
                             "}"
                             "function initBtn(){"
-                              "$('.btn').click(function(e){e.preventDefault();$.post($('form').attr('action'),$('form').serialize()).done(function(){alert('Updated');});});"
+                              "$('.btn').click(function(e){e.preventDefault();$.post($('form').attr('action'),$('form').serialize()).done(function(){});});"
                             "}"
                     "$(document).ready(function(){"
                       "g('Scenes','cp').done(initBtn);"
@@ -80,7 +80,7 @@ class WebContent
                     
    const String contentPage_Static = "<div class=\"container mb-4\">"
                                       "<h4>Static Color</h4>"
-                                      "<form action=\"/api/selectedStatic\" method=\"get\" class=\"row\">"
+                                      "<form action=\"/api/selectedStatic\" method=\"post\" class=\"row\">"
                                           "<div class=\"col-2\">"
                                               "<input type=\"color\" class=\"form-control form-control-color\" id=\"selectedStaticColor\" name=\"selectedStaticColor\" value=\"#563d7c\" title=\"Choose your color\" />"
                                           "</div>"

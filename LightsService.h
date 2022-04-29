@@ -6,6 +6,7 @@
 #include <FlashStorage.h>
 #include "LightsConstants.h"
 #include "LightsPattern_Scenes.h"
+#include "LightsPattern_SelectedStatic.h"
 
 FlashStorage(lightsConfigurationStored, LightsConfiguration);
 
@@ -46,6 +47,9 @@ class LightsService
         case scenes:
           lightsPattern_Scenes.show(lightsConfiguration.scenesType);
           break;
+        case selectedStatic:
+          lightsPattern_SelectedStatic.show(lightsConfiguration.colors[0]);
+          break;
       }
     }
 
@@ -64,12 +68,23 @@ class LightsService
             debugln(getScenesType(lightsConfiguration.scenesType));
           }
           break;
+        case selectedStatic:
+          debug("Set static color: ");
+          debugln(lightsConfiguration.colors[0]);
+          debug("Stored static color: ");
+          debugln(storedLightsConfiguration.colors[0]);
+          
+          if(strcmp(lightsConfiguration.colors[0], storedLightsConfiguration.colors[0]) != 0)
+          {
+            lightsConfigurationHasChanged = true;
+          }
+          break;
       }
 
       if (lightsConfigurationHasChanged)
       {
         lightsConfigurationStored.write(lightsConfiguration);
-        debugln("Lights configuration written to flash storage");
+        debugln("The changed lights configuration written to flash storage");
       }
     }
 };
